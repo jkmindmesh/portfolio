@@ -1,5 +1,4 @@
-## app/page.tsx
-```tsx
+
 export default function Home() {
   return (
     <main className="p-10 max-w-5xl mx-auto">
