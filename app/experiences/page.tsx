@@ -1,5 +1,4 @@
-## app/experiences/page.tsx
-```tsx
+
 import experiences from "../../data/experiences.json";
 import Card from "../../components/Card";
 
