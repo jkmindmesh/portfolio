@@ -1,0 +1,5 @@
+## data/experiences.json
+```json
+[
+  { "title": "Research Internship", "description": "Worked on engineering systems" }
+]
