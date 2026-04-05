@@ -1,5 +1,4 @@
-## app/projects/page.tsx
-```tsx
+
 import projects from "../../data/projects.json";
 import Card from "../../components/Card";
 
