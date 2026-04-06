@@ -1,5 +1,4 @@
-## data/activities.json
-```json
+
 [
   { "title": "Robotics Club", "description": "Led design + competitions" }
 ]
