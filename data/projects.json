@@ -1,5 +1,4 @@
-## data/projects.json
-```json
+
 [
   { "title": "AI Drug Repurposing", "description": "ML model for new treatments" },
   { "title": "Concept Car", "description": "Aerodynamic vehicle design" }
