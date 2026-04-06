@@ -1,14 +1,17 @@
-
 import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center p-6 border-b border-zinc-800">
-      <h1 className="font-bold text-xl">Your Name</h1>
-      <div className="flex gap-6 text-gray-400">
-        <Link href="/projects">Projects</Link>
-        <Link href="/experiences">Experiences</Link>
-        <Link href="/activities">Activities</Link>
+    <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/70 border-b border-zinc-200 p-4">
+      <div className="max-w-5xl mx-auto flex justify-between items-center">
+        <Link href="/" className="font-bold text-xl hover:opacity-70 transition">
+          Your Name
+        </Link>
+        <div className="flex gap-8 text-sm font-medium text-zinc-600">
+          <Link href="/projects" className="hover:text-black transition">Projects</Link>
+          <Link href="/experiences" className="hover:text-black transition">Experiences</Link>
+          <Link href="/activities" className="hover:text-black transition">Activities</Link>
+        </div>
       </div>
     </nav>
   );
