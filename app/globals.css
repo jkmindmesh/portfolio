@@ -1,12 +1,9 @@
 @import "tailwindcss";
 
-/* This replaces the old 'base' layer styling */
 @theme {
-  /* You can add custom colors here if you want, 
-     but v4 has a great dark mode default */
+  --color-brand: #0070f3;
 }
 
 body {
-  /* @apply still works perfectly in v4 */
-  @apply bg-black text-white font-sans;
+  @apply bg-zinc-50 text-zinc-900 antialiased;
 }
