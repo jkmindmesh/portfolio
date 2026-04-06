@@ -1,5 +1,4 @@
-## tsconfig.json (same as before)
-```json
+
 {
   "compilerOptions": {
     "target": "es5",
