@@ -1,5 +1,6 @@
 
 {
+
   "name": "portfolio-site",
   "private": true,
   "scripts": {
@@ -15,6 +16,7 @@
   "devDependencies": {
     "tailwindcss": "latest",
     "postcss": "latest",
-    "autoprefixer": "latest"
+    "autoprefixer": "latest",
+    "@tailwindcss/postcss": "latest"
   }
 }
