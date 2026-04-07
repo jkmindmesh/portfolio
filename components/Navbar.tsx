@@ -1,18 +1,1 @@
-import Link from "next/link";
-
-export default function Navbar() {
-  return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="font-black text-2xl tracking-tighter text-slate-900">
-          Jiya Kapoor<span className="text-blue-600">.</span>
-        </Link>
-        <div className="hidden md:flex gap-8 text-sm font-bold text-slate-500 uppercase tracking-widest">
-          <Link href="/projects" className="hover:text-blue-600 transition">Projects</Link>
-          <Link href="/experiences" className="hover:text-blue-600 transition">Experience</Link>
-          <Link href="/activities" className="hover:text-blue-600 transition">Activities</Link>
-        </div>
-      </div>
-    </nav>
-  );
-}
+'use client'; import Link from "next/link"; import { useState } from "react"; export default function Navbar() { const [isOpen, setIsOpen] = useState(false); return ( <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100"> <div className="max-w-5xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center"> <Link href="/" className="font-black text-xl md:text-2xl tracking-tighter text-slate-900"> Jiya<span className="text-blue-600">.</span> </Link> <div className="hidden md:flex gap-8 text-sm font-bold text-slate-500 uppercase tracking-widest"> <Link href="/projects" className="hover:text-blue-600 transition">Projects</Link> <Link href="/experiences" className="hover:text-blue-600 transition">Experience</Link> <Link href="/activities" className="hover:text-blue-600 transition">Activities</Link> </div> <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition" aria-label="Toggle menu" > {isOpen ? ( <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> </svg> ) : ( <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /> </svg> )} </button> </div> {isOpen && ( <div className="md:hidden bg-white border-t border-slate-100 px-4 py-4 space-y-3"> <Link href="/projects" className="block py-2 px-4 text-sm font-bold text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition" onClick={() => setIsOpen(false)} > Projects </Link> <Link href="/experiences" className="block py-2 px-4 text-sm font-bold text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition" onClick={() => setIsOpen(false)} > Experience </Link> <Link href="/activities" className="block py-2 px-4 text-sm font-bold text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition" onClick={() => setIsOpen(false)} > Activities </Link> </div> )} </nav> ); }
