@@ -1,0 +1,507 @@
+/* =========================================
+   Global Styles
+========================================= */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+/* =========================================
+   Header
+========================================= */
+header {
+  text-align: center;
+  padding: 14px 0;
+  background: linear-gradient(90deg, #005baa, #0078d7);
+  color: white;
+  border-radius: 8px;
+  margin: 12px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+header p {
+  margin: 4px 0 0 0;
+  font-size: 1rem;
+}
+
+/* =========================================
+   Section Containers
+========================================= */
+.section {
+  background: #fff;
+  margin: 0.8rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .section {
+  background: #2b2b2b;
+}
+
+/* =========================================
+   Collapsible Sections
+========================================= */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.section-header h2 {
+  color: #005baa;
+  font-size: 1.1rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dark-mode .section-header h2 {
+  color: #5aa0ff;
+}
+
+.toggle-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 14px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.toggle-icon:hover {
+  background-color: #ddd;
+  transform: scale(1.1);
+}
+
+.dark-mode .toggle-icon {
+  background-color: #444;
+  color: #ddd;
+}
+
+.collapsed {
+  display: none;
+}
+
+/* ------------------ Card Styling ------------------ */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card input,
+.card textarea {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.card textarea {
+  resize: vertical;
+  min-height: 80px;
+  max-height: 200px;
+}
+
+body.dark-mode .card input,
+body.dark-mode .card textarea {
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+/* ------------------ Card Buttons ------------------ */
+.card-buttons {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.card-buttons button {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.card-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.remove-btn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.remove-btn:hover:not(:disabled) {
+  background-color: #c0392b;
+}
+
+.move-up,
+.move-down {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.move-up:hover:not(:disabled),
+.move-down:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+/* =========================================
+   Actions / Buttons Row
+========================================= */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 12px 0;
+}
+
+/* Common button/label styles */
+.actions button,
+.actions .upload-label {
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  text-decoration: none;
+  line-height: 1.2;
+  width: auto;
+  flex: 0 0 auto;
+  margin: 4px;
+}
+
+/* Upload Resume Label */
+.actions .upload-label {
+  background-color: #6c757d; /* matches Reset button */
+  color: white;
+}
+
+.actions .upload-label:hover {
+  background-color: #555; /* darker shade for hover */
+}
+
+/* Add Buttons */
+.actions .add-btn {
+  background-color: #0078d7;
+  color: white;
+}
+
+.actions .add-btn:hover {
+  background-color: #005baa;
+}
+
+/* Generate Button */
+.actions .generate-btn {
+  background-color: #28a745;
+  color: white;
+  font-weight: 600;
+}
+
+.actions .generate-btn:hover {
+  background-color: #218838;
+}
+
+/* Reset Button */
+.actions .reset-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.actions .reset-btn:hover {
+  background-color: #555;
+}
+
+/* File name text next to upload */
+.actions .file-name {
+  font-size: 0.85rem;
+  color: #555;
+  font-style: italic;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* Autosave text styling */
+.autosave-text {
+  width: 100%;
+  font-size: 0.85rem;
+  color: #555;
+  font-style: italic;
+  margin-top: 6px;
+  text-align: center;
+}
+
+body.dark-mode .autosave-text {
+  color: #ccc;
+}
+
+/* =========================================
+   Actions / Buttons Row
+========================================= */
+
+
+/* File name text next to upload */
+.actions .file-name {
+  font-size: 0.85rem;
+  color: #555;
+  font-style: italic;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* Autosave text styling */
+.autosave-text {
+  width: 100%;
+  font-size: 0.85rem;
+  color: #555;
+  font-style: italic;
+  margin-top: 6px;
+  text-align: center;
+}
+
+body.dark-mode .autosave-text {
+  color: #ccc;
+}
+
+/* =========================================
+   Global Buttons
+========================================= */
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  width: auto;
+  margin: 4px;
+}
+
+.add-btn {
+  background-color: #0078d7;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #005baa;
+}
+
+.remove-btn {
+  background-color: #ff6464;
+  color: white;
+}
+
+.remove-btn:hover {
+  background-color: #e43f3f;
+}
+
+.generate-btn {
+  background-color: #28a745;
+  color: white;
+  font-weight: 600;
+}
+
+.generate-btn:hover {
+  background-color: #218838;
+}
+
+.reset-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.reset-btn:hover {
+  background-color: #555;
+}
+
+.upload-label {
+  background-color: #6c757d; /* change to match other buttons */
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  margin: 4px;
+  text-decoration: none;
+  transition: background 0.2s ease-in-out;
+}
+
+.upload-label:hover {
+  background-color: #555; /* darker shade for hover, matching Reset button */
+}
+
+/* =========================================
+   File Name Display
+========================================= */
+.file-name {
+  font-size: 0.9rem;
+  color: #555;
+  margin-left: 8px;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+/* =========================================
+   Theme Toggle
+========================================= */
+#theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 12px;
+  background: #0078d7;
+  color: white;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 999;
+}
+
+#theme-toggle:hover {
+  background: #005baa;
+}
+
+/* =========================================
+   Debug Log
+========================================= */
+.debug {
+  margin: 1rem;
+}
+
+#log-box {
+  width: 100%;
+  height: 200px;
+  font-family: monospace;
+  font-size: 12px;
+  background: #1e1e1e;
+  color: #dcdcdc;
+  border-radius: 6px;
+  padding: 8px;
+  resize: vertical;
+  overflow-y: auto;
+}
+
+.dark-mode #log-box {
+  background: #0f0f0f;
+}
+
+/* =========================================
+   Dark Mode
+========================================= */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background: linear-gradient(90deg, #1e3a5f, #2a4a7f);
+  color: #f0f0f0;
+}
+
+body.dark-mode .section {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+body.dark-mode .card {
+  background: #2a2a2a;
+  border: 1px solid #444;
+}
+
+body.dark-mode .section-header h2 {
+  color: #80c0ff;
+}
+
+body.dark-mode .toggle-icon {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .card input,
+body.dark-mode .card textarea {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+
+body.dark-mode .add-btn,
+body.dark-mode .remove-btn,
+body.dark-mode .generate-btn,
+body.dark-mode .reset-btn {
+  filter: brightness(1.2);
+}
+
+body.dark-mode .debug {
+  background: #1a1a1a;
+  color: #cfcfcf;
+}
+
+body.dark-mode #log-box {
+  background: #0d0d0d;
+  color: #cfcfcf;
+  border: 1px solid #444;
+}
+
+/* =========================================
+   Responsive Design
+========================================= */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  button {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+  .section {
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+}
