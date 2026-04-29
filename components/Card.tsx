@@ -1,3 +1,4 @@
+import Link from "next/link";
 interface CardProps {
   title: string;
   description: string;
