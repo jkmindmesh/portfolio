@@ -124,20 +124,23 @@ export default function LearningPlanner() {
   };
 
   // Handle drag over
-  const handleDragOver = (e: React.DragEvent) => {
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-    e.currentTarget.style.opacity = '0.8';
+    const target = e.currentTarget as HTMLDivElement;
+    target.style.opacity = '0.8';
   };
 
   // Handle drag leave
-  const handleDragLeave = (e: React.DragEvent) => {
-    e.currentTarget.style.opacity = '1';
+  const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
+    const target = e.currentTarget as HTMLDivElement;
+    target.style.opacity = '1';
   };
 
   // Handle drop
-  const handleDrop = (e: React.DragEvent, newStatus: Resource['status']) => {
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>, newStatus: Resource['status']) => {
     e.preventDefault();
-    e.currentTarget.style.opacity = '1';
+    const target = e.currentTarget as HTMLDivElement;
+    target.style.opacity = '1';
 
     if (draggedResource) {
       setResources(resources.map(r =>
@@ -643,12 +646,14 @@ function ResourceCard({ resource, onDragStart, onEdit, onDelete }: ResourceCardP
         boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
       }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
-        (e.currentTarget as HTMLDivElement).style.transform = "translateY(-2px)";
+        const target = e.currentTarget as HTMLDivElement;
+        target.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+        target.style.transform = "translateY(-2px)";
       }}
       onMouseLeave={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
-        (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+        const target = e.currentTarget as HTMLDivElement;
+        target.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+        target.style.transform = "translateY(0)";
       }}
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "8px" }}>
