@@ -1,5 +1,5 @@
 
 [
-  { "title": "Learning Planner", "description": "Personal learning assistant" },
-  { "title": "Concept Car", "description": "Aerodynamic vehicle design" }
+  { "title": "Learning Planner", "description": "Personal learning assistant","url": "https://jkapp.vercel.app/projects/learning-planner" },
+  { "title": "Concept Car", "description": "Aerodynamic vehicle design", "url": "https://jkapp.vercel.app/projects/learning-planner" }
 ]
